@@ -38,3 +38,12 @@
   height: auto;
   display: block;
 }
+
+.char-select-container {
+  display: flex;
+}
+
+.char-name {
+  font-size: .75em;
+  text-align: center;
+}

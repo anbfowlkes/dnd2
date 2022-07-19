@@ -25,18 +25,25 @@ const CreateACharacter = ({setScreen}) => {
 
     return (
         <div>
-            <h1 onClick={() => {setScreen('main')}}>{'Create A Character'}</h1>
-            <img src={selectedCharImg} className="selected-car-img" />
-            {/* <p>{JSON.stringify(portraitMap)}</p> */}
-            <select onChange={handleCharSelect}>
-                {
-                    Object.keys(portraitMap).map((element) => {
-                        return(
-                            <option value={portraitMap[element]}>{element}</option>
-                        )
-                    })
-                }
-            </select>
+            <h1 style={{textAlign: 'center'}} onClick={() => {setScreen('main')}}>{'Create A Character'}</h1>
+            <div className="char-select-container">
+                 <div>  
+                    <input type={'text'} className={'char-name'} placeholder={'Name your character'} />
+                    <select onChange={handleCharSelect} className="class-select">
+                        {
+                            Object.keys(portraitMap).map((element) => {
+                                return(
+                                    <option value={portraitMap[element]}>{element}</option>
+                                )
+                            })
+                        }
+                    </select>
+                </div>
+                <div>
+                    <img src={selectedCharImg} className="selected-car-img" />
+                </div>
+            </div>
+                {/* <p>{JSON.stringify(portraitMap)}</p> */}
         </div>
     )
 }
